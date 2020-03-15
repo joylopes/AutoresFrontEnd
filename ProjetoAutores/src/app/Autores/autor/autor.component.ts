@@ -9,14 +9,12 @@ import { AutorService } from 'src/app/Services/Autor/autor.service';
 export class AutorComponent implements OnInit {
   qtdDeNomes: number = 0;
   constructor(
-    private autorService: AutorService
+    public autorService: AutorService
   ) { }
 
   ngOnInit() {
+    this.autorService.listarAutores();
   }
 
-  atualizarQtdNomes() {
-    if (this.qtdDeNomes != null)
-      this.autorService.quantidadeDeNomes.next(this.qtdDeNomes);
-  }
+
 }

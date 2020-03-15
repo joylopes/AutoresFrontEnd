@@ -10,6 +10,8 @@ import { map } from 'rxjs/operators';
 export class AutorService {
 
   quantidadeDeNomes: Subject<number> = new Subject<number>();
+  lstDeNomes: Subject<any> = new Subject<any>();
+
   baseUrl = Global.BaseUrl;
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -20,13 +22,23 @@ export class AutorService {
 
   }
 
-  Adicionar(obj): Observable<any> {
-    return this.http.post(this.baseUrl + "Autor/Adicionar", JSON.stringify(obj), this.httpOptions)
+  listarAutores() {
+    this.ListarAutoresComNomeFormatado().subscribe(x => {
+      this.lstDeNomes.next(x);
+    });
+  }
+
+  atualizarSubjectQuantidadeDeNomes(qtd: number) {
+    this.quantidadeDeNomes.next(qtd);
+  }
+
+  Adicionar(obj): Observable<any[]> {
+    return this.http.post(this.baseUrl + "Autores/Adicionar", JSON.stringify(obj), this.httpOptions)
       .pipe(map(res => res = JSON.parse(res.toString())));
   }
 
   ListarAutoresComNomeFormatado(): Observable<any[]> {
-    return this.http.get(this.baseUrl + "Autor/ListarAutoresComNomeFormatado", this.httpOptions)
+    return this.http.get(this.baseUrl + "Autores/ListarAutoresComNomeFormatado", this.httpOptions)
       .pipe(map(res => res = JSON.parse(res.toString())));
   }
 }

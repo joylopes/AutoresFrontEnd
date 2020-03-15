@@ -10,8 +10,10 @@
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-3">
-                            <input type="number" min="0" class="form-control" (keyup)="atualizarQtdNomes()"
-                                (change)="atualizarQtdNomes()" [(ngModel)]="qtdDeNomes">
+                            <input type="number" min="0" class="form-control"
+                                (keyup)="autorService.atualizarSubjectQuantidadeDeNomes(qtdDeNomes)"
+                                (change)="autorService.atualizarSubjectQuantidadeDeNomes(qtdDeNomes)"
+                                [(ngModel)]="qtdDeNomes">
                         </div>
                     </div>
                 </div>
@@ -19,7 +21,7 @@
         </div>
     </div>
     <div class="row mt-5">
-        <div class="col form-group text-center d-flex justify-content-center">
+        <div class="col form-group text-center  justify-content-center">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -27,7 +29,7 @@
                             <h5>Adicionar autores</h5>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
+                    <div class="row justify-content-center">
                         <div class="col">
                             <app-adicionar-autor></app-adicionar-autor>
                         </div>
@@ -35,9 +37,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col">
+
+        <div class="col form-group text-center  justify-content-center">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
@@ -45,7 +46,7 @@
                             <h5>Lista de autores</h5>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
+                    <div class="row  justify-content-center">
                         <div class="col">
                             <app-listar-autores></app-listar-autores>
                         </div>
