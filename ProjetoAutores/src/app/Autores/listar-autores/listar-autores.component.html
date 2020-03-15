@@ -1,1 +1,16 @@
-<p>listar-autores works!</p>
+<table class="table">
+    <thead>
+        <th></th>
+    </thead>
+    <tbody *ngIf="listaDeAutoresNome.length > 0">
+        <tr *ngFor="let item of listaDeAutoresNome | paginate: { id:'autores', itemsPerPage: 6, currentPage: a };">
+            <td class="text-muted">{{item.nome}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="text-center mt-3">
+    <pagination-controls id="autores" (pageChange)="a = $event" autoHide="false" previousLabel="Anterior"
+        nextLabel="Proximo" screenReaderPaginationLabel="Paginação" screenReaderPageLabel="Pagina"
+        screenReaderCurrentLabel="Pagina atual">
+    </pagination-controls>
+</div>
