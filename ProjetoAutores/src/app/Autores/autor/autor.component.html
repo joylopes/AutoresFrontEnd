@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col form-group text-center d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col">
+                            <label>Insira a quantidade de nomes que serão adicionados: </label>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-3">
+                            <input type="number" min="1" class="form-control" (change)="atualizarQtdNomes()"
+                                [(ngModel)]="qtdDeNomes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <app-adicionar-autor></app-adicionar-autor>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center">teste</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
