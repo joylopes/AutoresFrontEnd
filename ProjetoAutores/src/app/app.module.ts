@@ -8,6 +8,7 @@ import { AdicionarAutorComponent } from './Autores/adicionar-autor/adicionar-aut
 import { ListarAutoresComponent } from './Autores/listar-autores/listar-autores.component';
 import { AutorComponent } from './Autores/autor/autor.component';
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
   ],
   imports: [
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     BsDropdownModule.forRoot(),
