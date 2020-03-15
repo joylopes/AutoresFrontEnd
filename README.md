@@ -3,8 +3,6 @@
 
 NPM Version [6.13.4]
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
-
 ![](../header.png)
 
 
