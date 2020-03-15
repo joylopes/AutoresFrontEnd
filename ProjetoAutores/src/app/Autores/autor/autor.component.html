@@ -10,8 +10,26 @@
                     </div>
                     <div class="row d-flex justify-content-center">
                         <div class="col-3">
-                            <input type="number" min="1" class="form-control" (change)="atualizarQtdNomes()"
-                                [(ngModel)]="qtdDeNomes">
+                            <input type="number" min="0" class="form-control" (keyup)="atualizarQtdNomes()"
+                                (change)="atualizarQtdNomes()" [(ngModel)]="qtdDeNomes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col form-group text-center d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col text-center">
+                            <h5>Adicionar autores</h5>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col">
+                            <app-adicionar-autor></app-adicionar-autor>
                         </div>
                     </div>
                 </div>
@@ -22,16 +40,16 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <app-adicionar-autor></app-adicionar-autor>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="text-center">teste</h3>
+                    <div class="row">
+                        <div class="col text-center">
+                            <h5>Lista de autores</h5>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col">
+                            <app-listar-autores></app-listar-autores>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

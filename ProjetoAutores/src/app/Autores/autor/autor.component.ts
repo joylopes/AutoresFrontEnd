@@ -7,7 +7,7 @@ import { AutorService } from 'src/app/Services/Autor/autor.service';
   styleUrls: ['./autor.component.css']
 })
 export class AutorComponent implements OnInit {
-  qtdDeNomes: number = 1;
+  qtdDeNomes: number = 0;
   constructor(
     private autorService: AutorService
   ) { }
@@ -16,6 +16,7 @@ export class AutorComponent implements OnInit {
   }
 
   atualizarQtdNomes() {
-    this.autorService.quantidadeDeNomes.next(this.qtdDeNomes);
+    if (this.qtdDeNomes != null)
+      this.autorService.quantidadeDeNomes.next(this.qtdDeNomes);
   }
 }
