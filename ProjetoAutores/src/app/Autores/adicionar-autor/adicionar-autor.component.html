@@ -1,1 +1,21 @@
-<p>{{qtdDeNomes}}</p>
+<div [formGroup]="form">
+    <div formArray="listaDeAutores">
+        <div class="row scroll">
+            <div class="col">
+                <ng-container *ngFor="let item of form.get('listaDeAutores').controls; let i = index;">
+                    <div class="row my-2" [formGroup]="form.get('listaDeAutores').controls[i]">
+                        <div class="col">
+                            <input type="text" class="form-control" formControlName="nome">
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col">
+                <button class="btn btn-outline-success" [hidden]="form.get('listaDeAutores').length == 0"
+                    [disabled]="!form.valid" (click)="adicionar()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+</div>
